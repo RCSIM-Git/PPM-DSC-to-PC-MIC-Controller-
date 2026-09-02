@@ -1,0 +1,323 @@
+{
+    "audio": {
+        "device_index": null,
+        "sample_rate": 48000,
+        "block_size": 256,
+        "channel": 0,
+        "threshold_mode": "adaptive",
+        "manual_threshold": 0.2
+    },
+    "decoder": {
+        "num_channels": 8,
+        "min_pulse_us": 750,
+        "max_pulse_us": 2250,
+        "sync_min_us": 3000,
+        "polarity": "auto",
+        "smoothing": 0.35,
+        "deadband_us": 4
+    },
+    "controller": {
+        "enabled": true,
+        "type": "xbox360",
+        "active_profile": "Mode 2 (Drone / FPV / Heli)"
+    },
+    "calibration": {
+        "CH1": {
+            "name": "Channel 1",
+            "min_us": 1000,
+            "center_us": 1500,
+            "max_us": 2000,
+            "reversed": false,
+            "deadband": 0.02,
+            "expo": 0.0
+        },
+        "CH2": {
+            "name": "Channel 2",
+            "min_us": 1000,
+            "center_us": 1500,
+            "max_us": 2000,
+            "reversed": false,
+            "deadband": 0.02,
+            "expo": 0.0
+        },
+        "CH3": {
+            "name": "Channel 3",
+            "min_us": 1000,
+            "center_us": 1500,
+            "max_us": 2000,
+            "reversed": false,
+            "deadband": 0.02,
+            "expo": 0.0
+        },
+        "CH4": {
+            "name": "Channel 4",
+            "min_us": 1000,
+            "center_us": 1500,
+            "max_us": 2000,
+            "reversed": false,
+            "deadband": 0.02,
+            "expo": 0.0
+        },
+        "CH5": {
+            "name": "Channel 5",
+            "min_us": 1000,
+            "center_us": 1500,
+            "max_us": 2000,
+            "reversed": false,
+            "deadband": 0.02,
+            "expo": 0.0
+        },
+        "CH6": {
+            "name": "Channel 6",
+            "min_us": 1000,
+            "center_us": 1500,
+            "max_us": 2000,
+            "reversed": false,
+            "deadband": 0.02,
+            "expo": 0.0
+        },
+        "CH7": {
+            "name": "Channel 7",
+            "min_us": 1000,
+            "center_us": 1500,
+            "max_us": 2000,
+            "reversed": false,
+            "deadband": 0.02,
+            "expo": 0.0
+        },
+        "CH8": {
+            "name": "Channel 8",
+            "min_us": 1000,
+            "center_us": 1500,
+            "max_us": 2000,
+            "reversed": false,
+            "deadband": 0.02,
+            "expo": 0.0
+        },
+        "null": {
+            "CH1": {
+                "name": "Channel 1",
+                "min_us": 1000,
+                "center_us": 1500,
+                "max_us": 2000,
+                "reversed": false,
+                "deadband": 0.02,
+                "expo": 0.0
+            },
+            "CH2": {
+                "name": "Channel 2",
+                "min_us": 1000,
+                "center_us": 1500,
+                "max_us": 2000,
+                "reversed": false,
+                "deadband": 0.02,
+                "expo": 0.0
+            },
+            "CH3": {
+                "name": "Channel 3",
+                "min_us": 1000,
+                "center_us": 1500,
+                "max_us": 2000,
+                "reversed": true,
+                "deadband": 0.02,
+                "expo": 0.0
+            },
+            "CH4": {
+                "name": "Channel 4",
+                "min_us": 1000,
+                "center_us": 1500,
+                "max_us": 2000,
+                "reversed": false,
+                "deadband": 0.02,
+                "expo": 0.0
+            },
+            "CH5": {
+                "name": "Channel 5",
+                "min_us": 1000,
+                "center_us": 1000,
+                "max_us": 2000,
+                "reversed": false,
+                "deadband": 0.02,
+                "expo": 0.0
+            },
+            "CH6": {
+                "name": "Channel 6",
+                "min_us": 1000,
+                "center_us": 1500,
+                "max_us": 2000,
+                "reversed": false,
+                "deadband": 0.02,
+                "expo": 0.0
+            },
+            "CH7": {
+                "name": "Channel 7",
+                "min_us": 1000,
+                "center_us": 1500,
+                "max_us": 2000,
+                "reversed": false,
+                "deadband": 0.02,
+                "expo": 0.0
+            },
+            "CH8": {
+                "name": "Channel 8",
+                "min_us": 1000,
+                "center_us": 1000,
+                "max_us": 2000,
+                "reversed": false,
+                "deadband": 0.02,
+                "expo": 0.0
+            }
+        }
+    },
+    "profiles": {
+        "RadioMaster MT12 (Surface RC)": {
+            "description": "RadioMaster MT12 car/surface transmitter profile",
+            "channels": {
+                "CH1": {
+                    "target": "left_joystick_x",
+                    "type": "axis",
+                    "label": "Steering"
+                },
+                "CH2": {
+                    "target": "trigger_split",
+                    "type": "trigger_split",
+                    "label": "Throttle / Brake"
+                },
+                "CH3": {
+                    "target": "right_joystick_y",
+                    "type": "axis",
+                    "label": "Aux 1 (Dial/Trim)"
+                },
+                "CH4": {
+                    "target": "right_joystick_x",
+                    "type": "axis",
+                    "label": "Aux 2 (Trim)"
+                },
+                "CH5": {
+                    "target": "button_a",
+                    "type": "button",
+                    "label": "Switch A / Horn",
+                    "threshold": 1600
+                },
+                "CH6": {
+                    "target": "button_b",
+                    "type": "button",
+                    "label": "Switch B / Handbrake",
+                    "threshold": 1600
+                },
+                "CH7": {
+                    "target": "button_x",
+                    "type": "button",
+                    "label": "Switch C",
+                    "threshold": 1600
+                },
+                "CH8": {
+                    "target": "button_y",
+                    "type": "button",
+                    "label": "Switch D",
+                    "threshold": 1600
+                }
+            }
+        },
+        "Mode 2 (Drone / FPV / Heli)": {
+            "description": "Standard Mode 2: Throttle/Yaw Left, Roll/Pitch Right",
+            "channels": {
+                "CH1": {
+                    "target": "right_joystick_x",
+                    "type": "axis",
+                    "label": "Roll (Aileron)"
+                },
+                "CH2": {
+                    "target": "right_joystick_y",
+                    "type": "axis",
+                    "label": "Pitch (Elevator)",
+                    "invert": true
+                },
+                "CH3": {
+                    "target": "left_joystick_y",
+                    "type": "axis",
+                    "label": "Throttle"
+                },
+                "CH4": {
+                    "target": "left_joystick_x",
+                    "type": "axis",
+                    "label": "Yaw (Rudder)"
+                },
+                "CH5": {
+                    "target": "button_a",
+                    "type": "button",
+                    "label": "Arm (AUX1)",
+                    "threshold": 1600
+                },
+                "CH6": {
+                    "target": "button_b",
+                    "type": "button",
+                    "label": "Mode (AUX2)",
+                    "threshold": 1600
+                },
+                "CH7": {
+                    "target": "button_left_shoulder",
+                    "type": "button",
+                    "label": "Buzzer (AUX3)",
+                    "threshold": 1600
+                },
+                "CH8": {
+                    "target": "button_right_shoulder",
+                    "type": "button",
+                    "label": "Turtle (AUX4)",
+                    "threshold": 1600
+                }
+            }
+        },
+        "Mode 1 (Airplane)": {
+            "description": "Mode 1: Rudder/Elevator Left, Aileron/Throttle Right",
+            "channels": {
+                "CH1": {
+                    "target": "right_joystick_x",
+                    "type": "axis",
+                    "label": "Aileron (Roll)"
+                },
+                "CH2": {
+                    "target": "right_joystick_y",
+                    "type": "axis",
+                    "label": "Throttle"
+                },
+                "CH3": {
+                    "target": "left_joystick_y",
+                    "type": "axis",
+                    "label": "Elevator (Pitch)",
+                    "invert": true
+                },
+                "CH4": {
+                    "target": "left_joystick_x",
+                    "type": "axis",
+                    "label": "Rudder (Yaw)"
+                },
+                "CH5": {
+                    "target": "button_a",
+                    "type": "button",
+                    "label": "Switch 1",
+                    "threshold": 1600
+                },
+                "CH6": {
+                    "target": "button_b",
+                    "type": "button",
+                    "label": "Switch 2",
+                    "threshold": 1600
+                },
+                "CH7": {
+                    "target": "button_x",
+                    "type": "button",
+                    "label": "Switch 3",
+                    "threshold": 1600
+                },
+                "CH8": {
+                    "target": "button_y",
+                    "type": "button",
+                    "label": "Switch 4",
+                    "threshold": 1600
+                }
+            }
+        }
+    }
+}
