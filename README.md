@@ -5,119 +5,115 @@
 [![Platform: Windows](https://img.shields.io/badge/platform-Windows-lightgrey.svg)]()
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)]()
 
-> **Real-time RC Radio Trainer Port PPM Audio Decoder to Virtual Xbox 360 Controller**  
-> *Dekoder sygnału PPM audio z portu trenera aparatury RC na wirtualny kontroler Xbox 360 / DualShock 4 w systemie Windows.*
+> 🌐 **Language / Język:** **English** | [Polski](README_PL.md)
+
+> **Real-time RC Radio Trainer Port PPM Audio Decoder to Virtual Xbox 360 Controller**
 
 ---
 
-## 🇵🇱 Opis Projektu (Polish)
+## 📖 Project Overview
 
-**PPM-SIM** to nowoczesna aplikacja na system Windows, która pozwala na podłączenie aparatury RC (np. **RadioMaster MT12**, Boxer, TX16S, FlySky, FrSky, TBS Tango itp.) do komputera za pomocą standardowego kabla audio jack 3.5 mm (port trenera / DSC) do wejścia mikrofonowego / liniowego karty dźwiękowej. Program w czasie rzeczywistym dekoduje impulsy 8 kanałów (CH1–CH8) i mapuje je na natywny **wirtualny kontroler Xbox 360 / DualShock 4** (poprzez sterownik ViGEmBus), umożliwiając bezproblemową zabawę we wszystkich grach i symulatorach:
-- **Drony / FPV**: *Liftoff, Velocidrone, Uncrashed, DRL, FPV Freerider, Tryp FPV*
-- **Samochody / Surface RC**: *Assetto Corsa, BeamNG.drive, Forza Horizon, DiRT Rally, CarX Drift Racing*
-- **Lotnictwo / Samoloty**: *RealFlight, Microsoft Flight Simulator, AccuRC*
+**PPM-SIM** is a Windows desktop application that bridges any standard R/C radio transmitter (**RadioMaster MT12**, Boxer, TX16S, Pocket, FlySky, FrSky, etc.) directly to your PC using a standard 3.5mm audio cable (DSC / Trainer port) plugged into the PC microphone or Line-In jack.
 
-### 🌟 Główne Funkcje
-- **Oscyloskop sygnału na żywo**: Wyświetla kształt fali audio PPM, poziom głośności wejścia (dB) oraz dynamiczne progi detekcji zboczy (Schmitt trigger).
-- **Precyzyjny dekoder 8 kanałów (CH1–CH8)**: Odczyt szerokości impulsów w mikrosekundach (µs) oraz w procentach (-100% do +100%) z sub-samplową interpolacją ułamkową.
-- **Natywny Wirtualny Pad Xbox 360 (ViGEmBus)**: Natychmiast wykrywany przez 100% gier i platform (Steam, gry bez konfiguracji DirectInput).
-- **Dedykowane profile**:
-  - **RadioMaster MT12 (Surface RC / Auta)**: Koło kierownicy na osi X, trigger dzielony (Gaz na RT, Hamulec/Wsteczny na LT), trymery i przyciski funkcyjne.
-  - **Mode 2 (Drony / Śmigłowce)**: Gaz/Yaw lewy drążek, Roll/Pitch prawy drążek.
-  - **Mode 1 (Samoloty)**: Aileron/Throttle prawy drążek, Elevator/Rudder lewy drążek.
-  - Własne profile użytkownika w formacie JSON/YAML.
-- **Kreator Kalibracji (Wizard)**: 3-stopniowy asystent centrowania, rejestracji pełnych zakresów ruchu (Min / Max), regulacji strefy martwej (Deadband) oraz inwersji osi.
-- **Minimalizacja do zasobnika systemowego (Tray)**: Aplikacja działa płynnie w tle podczas gry.
+The software decodes the 8-channel (CH1–CH8) PPM (Pulse Position Modulation) audio signal in real time with sub-millisecond precision and translates it into a native **virtual Xbox 360 / DualShock 4 controller** (via the ViGEmBus driver). This delivers seamless, zero-hardware plug-and-play compatibility across all PC games, racing simulators, and flight simulators:
+- **FPV Drones:** *Liftoff, Velocidrone, Uncrashed, DRL Simulator, FPV Freerider, Tryp FPV*
+- **Surface & Sim-Racing:** *Assetto Corsa, BeamNG.drive, Forza Horizon, DiRT Rally 2.0, CarX Drift Racing*
+- **Aviation:** *RealFlight, Microsoft Flight Simulator, AccuRC*
 
 ---
 
-## 🇬🇧 English Description
+## 🌟 Key Features
 
-**PPM-SIM** is a Windows desktop application that connects your RC transmitter (**RadioMaster MT12**, Boxer, TX16S, FlySky, FrSky, etc.) via a standard 3.5mm audio cable (DSC / Trainer Port) into your PC's microphone or line-in jack. It decodes the PPM (Pulse Position Modulation) signal in real-time with sub-millisecond precision and maps the channels to a native **virtual Xbox 360 gamepad** (via ViGEmBus).
-
-### 🚀 Key Features
-- **Ultra-low latency audio processing** (< 10 ms end-to-end) using `sounddevice`.
-- **Adaptive DSP & Schmitt Trigger**: Auto-detects PPM polarity (positive/negative), filters glitches, and smooths jitter (EMA + Deadband).
-- **Interactive Oscilloscope**: Real-time 60 FPS hardware-accelerated waveform viewer with adaptive threshold markers.
-- **Visual 8-Channel Monitors**: Live µs readouts and bi-directional deflection bars.
-- **Vector Controller Preview**: Real-time animated Xbox 360 gamepad showing stick positions, analog triggers (LT/RT), and pressed buttons.
-- **Calibration Wizard**: Automatic stick centering (Subtrim) and end-point range calibration.
-- **System Tray Integration**: Run silently in the background while gaming.
-
----
-
-## 🛠️ Konfiguracja Aparatury / Transmitter Setup
-
-1. **Podłączenie Kabla**:
-   - Użyj kabla audio mini-jack 3.5 mm (mono lub stereo).
-   - Podłącz jeden koniec do gniazda **DSC / Trainer** w aparaturze, a drugi do gniazda **Mikrofonu / Line-In** w komputerze.
-2. **Ustawienia w aparaturze (EdgeTX / OpenTX / MT12)**:
-   - **Model Setup** -> **Trainer Mode**: `Master/Jack`
-   - **Channels**: `8CH`
-   - **Frame Length**: `22.5ms`
-   - **Pulse Delay**: `300us`
-   - **Polarity**: `POS (+)` lub `NEG (-)` (PPM-SIM wykrywa automatycznie)
-   - W przypadku modeli samochodowych (MT12): przypisz CH1 = Steering, CH2 = Throttle/Brake, CH3..CH8 = Switches/Trims.
+- **Real-Time Signal Oscilloscope:** 60 FPS hardware-accelerated waveform viewer displaying the audio signal, input volume level (dB), and adaptive Schmitt trigger edge detection thresholds.
+- **High-Precision 8-Channel Decoder:** Reads channel pulse widths in microseconds (µs) and percentages (-100% to +100%) with fractional sub-sample interpolation.
+- **Native Virtual Xbox 360 Pad (ViGEmBus):** Instantly recognized by Windows and 100% of Steam and non-Steam games without requiring DirectInput emulator wrappers.
+- **Preconfigured Transmitter Profiles:**
+  - **RadioMaster MT12 (Surface RC / Cars):** Steering wheel on X axis, split trigger (Throttle on RT, Brake/Reverse on LT), trimmers, and functional toggle switches.
+  - **Mode 2 (Drones / Helicopters):** Throttle/Yaw on left stick, Roll/Pitch on right stick.
+  - **Mode 1 (Airplanes):** Aileron/Throttle on right stick, Elevator/Rudder on left stick.
+  - Custom user profiles stored in clean JSON format.
+- **Interactive Calibration Wizard:** 3-step assistant for stick/wheel centering (Subtrim), travel range registration (Min/Max), deadband adjustment, and axis inversion.
+- **System Tray Integration:** Runs silently in the background while gaming.
 
 ---
 
-## 📦 Wymagania i Instalacja / Installation
+## 🛠️ Transmitter Configuration (EdgeTX / OpenTX)
 
-### Wymagania / Prerequisites:
-- Windows 10 / 11 (64-bit)
-- Python 3.10+
-- Sterownik **ViGEmBus** (standard w Windows dla wirtualnych kontrolerów). Jeśli nie posiadasz, pobierz oficjalny instalator: [ViGEmBus GitHub Releases](https://github.com/nefarius/ViGEmBus/releases).
+1. **Hardware Connection:**
+   - Use a standard 3.5mm audio mini-jack cable (mono or stereo).
+   - Plug one end into the **DSC / Trainer** jack on your transmitter and the other into the PC **Microphone / Line-In** port.
+2. **Radio Model Setup (EdgeTX / OpenTX / MT12):**
+   - **Model Setup** -> **Trainer Mode:** `Master/Jack`
+   - **Channels:** `8CH`
+   - **Frame Length:** `22.5ms`
+   - **Pulse Delay:** `300us`
+   - **Polarity:** `POS (+)` or `NEG (-)` (PPM-SIM auto-detects polarity)
+   - For surface models (MT12): CH1 = Steering, CH2 = Throttle/Brake, CH3..CH8 = Switches/Trims.
 
-### Instalacja pakietów:
+---
+
+## 📦 Requirements & Installation
+
+### Prerequisites:
+- Windows 10 / 11 (64-bit).
+- Python 3.10+.
+- **ViGEmBus Driver** (standard virtual gamepad bus on Windows). Download the official installer: [ViGEmBus GitHub Releases](https://github.com/nefarius/ViGEmBus/releases).
+
+### Install Python Dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-### Uruchomienie:
-- Kliknij dwukrotnie **`run_ppm_sim.bat`**
-- lub z wiersza poleceń:
+### Launch:
+Double-click:
+```cmd
+run_ppm_sim.bat
+```
+Or execute via command prompt:
 ```bash
 python main.py
 ```
 
 ---
 
-## 🧪 Testy Jednostkowe / Testing
+## 🧪 Unit Testing
 
-Projekt zawiera pełny zestaw testów sprawdzających dekodowanie PPM, histerezę, polaryzację i mapowanie:
+Run the automated test suite verifying PPM decoding, hysteresis, polarity detection, and controller mapping:
 ```bash
 pytest tests -v
 ```
 
 ---
 
-## 📁 Struktura Plików / File Structure
+## 📁 Project Structure
 
-```
+```text
 PPM-SIM/
-├── main.py                    # Punkt startowy aplikacji / Entry point
-├── run_ppm_sim.bat            # Skrypt startowy 1-click / 1-click launcher
-├── requirements.txt           # Zależności Python / Dependencies
-├── config.json                # Konfiguracja, profile i kalibracja / Config
-├── LICENSE                    # Licencja MIT / MIT License
+├── main.py                    # Application entry point
+├── run_ppm_sim.bat            # 1-click launcher script
+├── requirements.txt           # Python dependencies (sounddevice, vgamepad, PySide6)
+├── config.json                # User profiles and calibration storage
+├── LICENSE                    # MIT License
+├── README.md                  # English documentation
+├── README_PL.md               # Polish documentation
 ├── core/
-│   ├── audio_capture.py       # Przechwytywanie dźwięku / Low latency audio stream
-│   ├── ppm_decoder.py         # Silnik dekodowania PPM i DSP / PPM DSP engine
-│   ├── controller_mapper.py   # Tłumacz kanałów na wirtualny pad Xbox 360 / ViGEm mapper
-│   └── config_manager.py      # Menedżer ustawień / Config manager
+│   ├── audio_capture.py       # Low-latency audio stream engine
+│   ├── ppm_decoder.py         # PPM DSP decoding engine with Schmitt trigger
+│   ├── controller_mapper.py   # ViGEmBus virtual Xbox 360 controller translator
+│   └── config_manager.py      # Configuration persistence manager
 ├── ui/
-│   ├── main_window.py         # Główne okno aplikacji / Main GUI window
-│   ├── oscilloscope_widget.py # Oscyloskop audio / Signal oscilloscope
-│   ├── channel_bars_widget.py # Wskaźniki 8 kanałów / 8CH pulse monitors
-│   ├── gamepad_preview.py     # Wizualizacja kontrolera / Vector gamepad canvas
-│   ├── calibration_dialog.py  # Kreator kalibracji / Calibration wizard
-│   └── theme.py               # Ciemny motyw QSS / Dark theme
+│   ├── main_window.py         # Main GUI window (PySide6)
+│   ├── oscilloscope_widget.py # Real-time audio waveform oscilloscope
+│   ├── channel_bars_widget.py # 8-channel pulse width monitor bars
+│   ├── gamepad_preview.py     # Real-time animated vector Xbox gamepad
+│   ├── calibration_dialog.py  # 3-step interactive calibration wizard
+│   └── theme.py               # Modern dark QSS styling
 └── tests/
-    └── test_ppm_decoder.py    # Testy jednostkowe / Unit tests
+    └── test_ppm_decoder.py    # Automated test cases
 ```
 
 ---
 
-## 📄 Licencja / License
+## 📄 License
 
-Projekt udostępniony na licencji **MIT**. Szczegóły w pliku [LICENSE](LICENSE).
+Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
